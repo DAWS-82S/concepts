@@ -1,4 +1,4 @@
-### Sending Gmail from CentOS 8
+### Sending Gmail from RHEL9
 
 * switch to root 
 ```
@@ -7,7 +7,7 @@ sudo su -
 
 * Install Postfix, the SASL authentication framework, and mailx.
  ```
-yum -y install postfix cyrus-sasl-plain sendmail
+dnf -y install postfix cyrus-sasl-plain sendmail
  ```
 
 * Restart Postfix to detect the SASL framework.
@@ -21,7 +21,7 @@ systemctl enable postfix
 ```
 * Open the /etc/postfix/main.cf file.
 ```
-vi /etc/postfix/main.cf 
+vim /etc/postfix/main.cf 
 ```
 append the following into the file at the end
 
@@ -43,7 +43,7 @@ touch /etc/postfix/sasl_passwd
 ```
 Add the following line to the file:
 ```
-vi /etc/postfix/sasl_passwd
+vim /etc/postfix/sasl_passwd
 ```
 ```
 [smtp.gmail.com]:587 xyz:AppPassword
