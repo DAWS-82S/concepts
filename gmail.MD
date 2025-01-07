@@ -54,6 +54,16 @@ vi /etc/postfix/sasl_passwd
 ```
 postmap /etc/postfix/sasl_passwd 
 ```
+
+* Verify Openssl config
+```
+vim /etc/ssl/openssl.cnf
+```
+Add the following line 
+```
+[provider_sect]
+legacy = legacy
+```
 * Sending mail
 Run the following command to send mail:
 ```
