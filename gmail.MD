@@ -7,7 +7,7 @@ sudo su -
 
 * Install Postfix, the SASL authentication framework, and mailx.
  ```
-dnf -y install postfix cyrus-sasl-plain sendmail
+dnf -y install postfix cyrus-sasl-plain mutt
  ```
 
 * Restart Postfix to detect the SASL framework.
@@ -59,14 +59,13 @@ postmap /etc/postfix/sasl_passwd
 ```
 vim /etc/ssl/openssl.cnf
 ```
-Add the following line 
+Add the following line under the section `[provider_sect]`
 ```
-[provider_sect]
 legacy = legacy
 ```
 * Sending mail
 Run the following command to send mail:
 ```
-echo "This is a test mail & Date $(date)" | sendmail -s "message" info@joindevops.com
+echo "This is a test mail & Date $(date)" | mutt -s "message" info@joindevops.com
 ```
  
