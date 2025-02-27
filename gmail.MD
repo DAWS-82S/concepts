@@ -46,9 +46,8 @@ Add the following line to the file:
 vim /etc/postfix/sasl_passwd
 ```
 ```
-[smtp.gmail.com]:587 xyz:AppPassword
+[smtp.gmail.com]:587 xyz@gmail.com:AppPassword
  ```
- **Note: xyz is from xyz@gmail.com, password_app is from google management app password**
 
 * Create a Postfix lookup table from the sasl_passwd text file by running the following command:
 ```
